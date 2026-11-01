@@ -39,7 +39,7 @@
 
 - **相对路径 + 锚点滚动定位（无浏览器路由）**：站点所有资源都用 `./assets/...` 相对路径，且没有使用 `history.pushState` 之类的路由，因此部署到子路径也不出错，**也不需要 `404.html` 兜底**。
 - **飞书简历链接已对外公开**：页面「下载简历」按钮指向 `https://my.feishu.cn/drive/folder/MmbXfEoBilOubPd56kdcF1nWnBg`，部署后任何人都能访问，请确认无误。
-- **2 张 PNG 是早期遗留**：`Wireframe_10.png` / `Wireframe_12.png` 当时未转 WebP，但引用与文件名一致、显示正常。如需进一步瘦身，可转成 WebP 并同步 `copy.json`/`copy.js` 里的引用（属可选优化，不影响上线）。
+- **图片已全部为 WebP**：原 2 张 PNG（`Wireframe_10` / `Wireframe_12`）已转为 WebP（q=88，共约 -82% 体积），引用已同步，不存在 PNG 残留。
 - **改文案流程**：改文案请用本地编辑器（`copy-editor.html` + `server.js`，**不在本部署包内**），改完重新生成 `copy.js` 后，把新的 `copy.js` 连同 `copy.json` 一起推上来。只推 `copy.json` 不生效，页面读的是 `copy.js`。
 - **自定义域名**：GitHub Pages 支持绑定你自己的域名（Settings → Pages → Custom domain），HTTPS 证书由 GitHub 自动签发。
 
