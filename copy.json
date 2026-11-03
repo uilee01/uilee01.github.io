@@ -7,9 +7,9 @@
   "ui": {
     "cn": {
       "name": "李启榛",
-      "logoMark": "✳",
+      "logoMark": "UI/UX设计师",
       "roman": "Uilee",
-      "role": "UI设计师/交互体验设计师",
+      "role": "广州大学 - 计算机应用",
       "resumeLabel": "",
       "location": "广州，中国 · 接受远程协作",
       "available": "Hi, I'm Qizhen",
@@ -31,8 +31,8 @@
       "downloadFailed": "下载未完成",
       "resumeUrl": "https://my.feishu.cn/drive/folder/MmbXfEoBilOubPd56kdcF1nWnBg",
       "resumeOpened": "简历已在新标签页打开",
-      "ogImage": "assets/img/Desktop_-_1.webp",
-      "selected": "精选作品",
+      "ogImage": "assets/img/og-share.webp",
+      "selected": "精选作品，完整案例请下载浏览",
       "selectedSub": "蓝鲸数据 | 广州移乐 | 亿语智能",
       "projectHint": "项目总览 Selected Works ",
       "all": "全部",
@@ -47,7 +47,7 @@
       "architecture": "111",
       "outcome": "规范",
       "next": "111",
-      "responsibility": "",
+      "responsibility": "21313",
       "demoLabel": "交互切片 / 本地示例数据",
       "referenceLabel": "领克数云 IP形象",
       "aboutLabel": "关于我",
@@ -1101,11 +1101,11 @@
           "caption": ""
         },
         {
-          "src": "assets/img/Wireframe_10.png",
+          "src": "assets/img/Wireframe_10.webp",
           "caption": ""
         },
         {
-          "src": "assets/img/Wireframe_12.png",
+          "src": "assets/img/Wireframe_12.webp",
           "caption": ""
         }
       ]
@@ -1410,7 +1410,9 @@
     "project.其他项目.decision",
     "project.其他项目.next",
     "project.其他项目.demoHint",
-    "project.其他项目.reference"
+    "project.其他项目.reference",
+    "ui.fictional",
+    "ui.responsibility"
   ],
   "_flagsNote": "页面级开关。showCaseDemo=false 时，案例弹层里「用代码画出来的 UI 示例（交互切片）」不显示；改成 true 或删掉该字段就恢复。也可在文案编辑器左侧「结构 · 分类 · 图集」里点开关切换。",
   "avatarSize": {
