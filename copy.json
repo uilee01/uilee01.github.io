@@ -31,6 +31,7 @@
       "downloadFailed": "下载未完成",
       "resumeUrl": "https://my.feishu.cn/drive/folder/MmbXfEoBilOubPd56kdcF1nWnBg",
       "resumeOpened": "简历已在新标签页打开",
+      "ogImage": "assets/img/Desktop_-_1.webp",
       "selected": "精选作品",
       "selectedSub": "蓝鲸数据 | 广州移乐 | 亿语智能",
       "projectHint": "项目总览 Selected Works ",
@@ -1100,11 +1101,11 @@
           "caption": ""
         },
         {
-          "src": "assets/img/Wireframe_10.webp",
+          "src": "assets/img/Wireframe_10.png",
           "caption": ""
         },
         {
-          "src": "assets/img/Wireframe_12.webp",
+          "src": "assets/img/Wireframe_12.png",
           "caption": ""
         }
       ]
