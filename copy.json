@@ -9,9 +9,9 @@
       "name": "李启榛",
       "logoMark": "UI/UX设计师",
       "roman": "Uilee",
-      "role": "广州大学 - 计算机应用",
+      "role": "UI设计师/交互体验设计师",
       "resumeLabel": "",
-      "location": "广州，中国 · 接受远程协作",
+      "location": "广州 · 中国，可远程协作",
       "available": "Hi, I'm Qizhen",
       "fictional": "Summary  of the design of the project",
       "nav": [
@@ -26,13 +26,13 @@
       ],
       "intro": "设计是判断，工程是兑现。\n我在两者之间工作，把模糊的想法做成清晰、好用、值得反复打开的产品。",
       "viewWork": "查看作品",
-      "download": "下载简历",
+      "download": "下载简历与作品集",
       "downloaded": "简历文本已准备下载",
       "downloadFailed": "下载未完成",
       "resumeUrl": "https://my.feishu.cn/drive/folder/MmbXfEoBilOubPd56kdcF1nWnBg",
       "resumeOpened": "简历已在新标签页打开",
       "ogImage": "assets/img/og-share.webp",
-      "selected": "精选作品，完整案例请下载浏览",
+      "selected": "精选作品",
       "selectedSub": "蓝鲸数据 | 广州移乐 | 亿语智能",
       "projectHint": "项目总览 Selected Works ",
       "all": "全部",
@@ -97,7 +97,7 @@
         }
       ],
       "toolkit": "专业技能",
-      "toolNote": "Professional Skills",
+      "toolNote": "从想法到落地的专业工具集",
       "skillGroups": [
         [
           "设计体系",
@@ -124,7 +124,7 @@
       "copyFailed": "无法访问剪贴板，请手动复制下方邮箱",
       "contactNote": "微信与手机同号",
       "print": "打印简历 / 另存 PDF",
-      "footer": "以判断设计，以代码实现",
+      "footer": "UI/UX视觉体验设计",
       "sculpture": "交互线框雕塑",
       "specimen": "形态研究 001",
       "sculptureHint": "点击雕塑切换形态 · 聚焦后用 ← → 旋转",
@@ -146,13 +146,13 @@
     },
     "en": {
       "name": "Qizhen Li",
-      "logoMark": "✳",
-      "roman": "LI QIZHEN",
+      "logoMark": "UI/UX Designer",
+      "roman": "Uilee",
       "role": "UI Designer / Interaction Designer",
       "resumeLabel": "Resume / Portfolio",
       "location": "Guangzhou, China · Open to remote",
       "available": "Hi, I'm Qizhen",
-      "fictional": "Summary of the design of the project",
+      "fictional": "Summary  of the design of the project",
       "nav": [
         "Work",
         "Experience",
@@ -339,7 +339,7 @@
         "headline": "领克数云（LKSY Cloud）官方学习伙伴",
         "summary": "主导具有代表性的 IP 形象，对外输出企业品牌的代言人，合理运营能快速建立出企业的品牌识别跟联想，有利于项目传播。",
         "context": "",
-        "role": "奥萨蒂啊就删掉",
+        "role": "",
         "tags": [
           "IP design",
           "故事",
@@ -1067,7 +1067,7 @@
     ]
   },
   "images": {
-    "_note": "图片位。填assets/img/ 下的文件名则显示你的图；留空则回退到原来的假 UI / 雕塑。可在编辑器里点预览对应位置直接选图。",
+    "_note": "图片位。填assets/img/ 下的文件名则显示你的图；留空则回退到原来的假 UI / 雕塑。可在编��器里点预览对应位置直接选图。",
     "avatar": "assets/img/Rectangle_2909.webp",
     "project.LKSY": "assets/img/Wireframe_5.webp",
     "project.XiaoWo": "assets/img/Wireframe_29.webp",
@@ -1411,7 +1411,6 @@
     "project.其他项目.next",
     "project.其他项目.demoHint",
     "project.其他项目.reference",
-    "ui.fictional",
     "ui.responsibility"
   ],
   "_flagsNote": "页面级开关。showCaseDemo=false 时，案例弹层里「用代码画出来的 UI 示例（交互切片）」不显示；改成 true 或删掉该字段就恢复。也可在文案编辑器左侧「结构 · 分类 · 图集」里点开关切换。",

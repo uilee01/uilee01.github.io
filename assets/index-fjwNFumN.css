@@ -118,7 +118,6 @@
 .case-dialog::-webkit-scrollbar-corner,html::-webkit-scrollbar-corner,body::-webkit-scrollbar-corner{background:transparent}
 
 /* SVG 图标：替代原先在移动端渲染成 emoji 的箭头/星号字形 */
-.logo-mark svg,.contact-star svg,.stamp-star svg,.mark-svg{width:1em;height:1em;display:inline-block;vertical-align:-.125em}
 .project-arrow{background:var(--accent);color:#111;transform:none}
 .project-arrow .ico-diag{display:inline-flex;align-items:center}
 .project-arrow svg{width:1.1em;height:1.1em;display:inline-block;vertical-align:-.15em}
