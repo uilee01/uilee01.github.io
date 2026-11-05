@@ -121,3 +121,84 @@
 .project-arrow{background:var(--accent);color:#111;transform:none}
 .project-arrow .ico-diag{display:inline-flex;align-items:center}
 .project-arrow svg{width:1.1em;height:1.1em;display:inline-block;vertical-align:-.15em}
+
+/* 顶栏：导航水平居中于页面，语言切换保持在右侧 */
+.site-header{position:relative}
+.site-header nav{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+.site-header .locale-button{margin-left:auto}
+
+/* 离开第一屏后，右下角显示返回顶部 */
+.back-to-top{position:fixed;right:28px;bottom:28px;z-index:40;width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid rgba(243,241,242,.28);background:rgba(24,24,28,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s,background .2s,border-color .2s}
+.back-to-top.is-visible{opacity:1;visibility:visible;transform:none}
+.back-to-top:hover{border-color:var(--accent);background:rgba(233,154,189,.16)}
+.back-to-top:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.back-to-top svg{width:18px;height:18px;display:block}
+@media(max-width:700px){.back-to-top{right:16px;bottom:16px;width:42px;height:42px}}
+@media print{.back-to-top{display:none!important}}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
+/* ===== 液态玻璃 Liquid Glass：深色基调，弹层与顶栏共用一组材质变量 ===== */
+:root{
+  /* 低不透明度让背后色彩透出来，saturate 放大透色 —— 液态玻璃的关键 */
+  --glass-tint:linear-gradient(155deg,rgba(46,44,56,.52) 0%,rgba(14,13,18,.60) 100%);
+  --glass-soft:linear-gradient(170deg,rgba(255,255,255,.10) 0%,rgba(34,32,44,.44) 40%,rgba(12,11,16,.58) 100%);
+  --glass-blur:blur(32px) saturate(185%);
+  --glass-edge:1px solid rgba(255,255,255,.16);
+  --glass-hi:inset 0 1px 0 rgba(255,255,255,.24),inset 0 -1px 0 rgba(0,0,0,.28);
+}
+
+/* --- 顶部导航：上滚抽屉式滑入，下滚收起 --- */
+.site-header{position:fixed;top:0;left:0;right:0;width:100%;box-sizing:border-box;height:75px;
+  padding-inline:max(40px,calc((100vw - 1400px)/2));z-index:15;
+  transition:transform .42s var(--ease),background .3s,box-shadow .3s,border-color .3s}
+.screen-content{padding-top:75px}
+html{scroll-padding-top:83px}
+html.header-hidden .site-header{transform:translateY(-102%)}
+html.header-glass .site-header{
+  background:var(--glass-soft);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:0;border-bottom:var(--glass-edge);
+  box-shadow:var(--glass-hi),0 14px 42px rgba(0,0,0,.5)}
+html.header-glass .site-header::before{
+  content:"";position:absolute;inset:0 0 auto;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent)}
+
+/* --- 案例弹窗（原生 dialog，top layer） --- */
+.case-dialog{
+  background:var(--glass-tint);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:var(--glass-edge);border-radius:24px;
+  box-shadow:var(--glass-hi),0 32px 100px #000c}
+.case-dialog::backdrop{background:rgba(5,5,9,.52);
+  -webkit-backdrop-filter:blur(18px) saturate(125%);backdrop-filter:blur(18px) saturate(125%)}
+.dialog-top{
+  background:linear-gradient(180deg,rgba(34,32,42,.82),rgba(20,19,25,.72));
+  -webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);
+  border-bottom:1px solid rgba(255,255,255,.10)}
+
+/* --- 图集灯箱：遮罩 + 工具条 + 圆形按钮 --- */
+.gal-lightbox::backdrop{background:rgba(5,5,9,.62);
+  -webkit-backdrop-filter:blur(20px) saturate(130%);backdrop-filter:blur(20px) saturate(130%)}
+.gal-lightbox .gal-lb-toolbar{
+  background:var(--glass-soft);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:var(--glass-edge);box-shadow:var(--glass-hi),0 8px 28px #0007}
+.gal-lightbox .gal-lb-close,.gal-lightbox .gal-lb-nav,.case-gallery .gal-nav{
+  background:var(--glass-soft);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:var(--glass-edge);box-shadow:var(--glass-hi)}
+
+/* --- toast：原本是亮底深字，统一回深色玻璃 --- */
+.toast{
+  background:var(--glass-soft);color:var(--ink);
+  -webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);
+  border:var(--glass-edge);border-radius:14px;
+  box-shadow:var(--glass-hi),0 8px 32px #0007}
+
+@media(max-width:700px){
+  .screen-content{padding-top:56px}
+  html{scroll-padding-top:64px}
+  .site-header{height:56px;padding-inline:20px}
+  .case-dialog{border-radius:18px}
+}
+@media(prefers-reduced-motion:reduce){.site-header{transition:none}}
