@@ -373,6 +373,25 @@
     resetView();
   }
 
+  /* 项目中文名：给没有 caption 的图补一句能读的 alt */
+  function projectLabel(id) {
+    var ps = (copy().projects || {})[lang()] || [];
+    for (var i = 0; i < ps.length; i++) {
+      if (ps[i] && ps[i].id === id) return ps[i].name || ps[i].id;
+    }
+    return id;
+  }
+  /* alt 控制在 125 字符内 */
+  function clip(s) {
+    s = String(s).replace(/\s+/g, ' ').trim();
+    return s.length > 120 ? s.slice(0, 117) + '…' : s;
+  }
+  function altOf(id, caption) {
+    if (caption) return clip(caption);
+    var lbl = projectLabel(id);
+    return clip(lang() === 'en' ? (lbl + ' — UI case') : (lbl + ' · 项目界面'));
+  }
+
   /* ---------- 构建图集 DOM ---------- */
   function build(id, g) {
     var items = (g.items || []).filter(function (it) {
@@ -419,9 +438,9 @@
         fig.className = 'gal-cell';
         fig.setAttribute('data-gal-index', String(i));
         fig.innerHTML = '<img alt=""><figcaption></figcaption>';
-        var im = fig.querySelector('img');
-        im.src = it.src || '';
-        im.alt = it.caption || '';
+            var im = fig.querySelector('img');
+            im.src = it.src || '';
+            im.alt = altOf(id, it.caption);
         im.addEventListener('click', function () { openLb(items, i); });
         fig.querySelector('figcaption').textContent = it.caption || '';
         if (!it.caption) fig.querySelector('figcaption').style.display = 'none';
@@ -460,7 +479,7 @@
       b.setAttribute('aria-label', '第 ' + (i + 1) + ' 张');
       var im = document.createElement('img');
       im.src = it.src || '';
-      im.alt = it.caption || '';
+      im.alt = altOf(id, it.caption);
       b.appendChild(im);
       b.addEventListener('click', function () { pick(id, 0, i); });
       strip.appendChild(b);
@@ -492,7 +511,10 @@
     cur.id = id; cur.index = i;
 
     var big = sec.querySelector('.gal-big');
-    if (big && big.getAttribute('src') !== (items[i].src || '')) big.setAttribute('src', items[i].src || '');
+    if (big) {
+      if (big.getAttribute('src') !== (items[i].src || '')) big.setAttribute('src', items[i].src || '');
+      big.setAttribute('alt', altOf(id, items[i].caption));
+    }
     var cap = sec.querySelector('.gal-caption');
     if (cap) {
       cap.textContent = items[i].caption || '';

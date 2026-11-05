@@ -1,0 +1,30 @@
+{
+  "name": "李启榛 · UI/UX 作品集",
+  "short_name": "Uilee",
+  "description": "广州 UI 设计师 / 交互体验设计师作品集，可承接远程 UI/UX 设计外包与兼职合作。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

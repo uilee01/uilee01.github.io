@@ -202,3 +202,15 @@ html.header-glass .site-header::before{
   .case-dialog{border-radius:18px}
 }
 @media(prefers-reduced-motion:reduce){.site-header{transition:none}}
+
+/* ===== 无 JS 时的静态兜底正文（SEO-STATIC 块）=====
+   只有在禁用 JavaScript 时才会显示，正常浏览看不到。
+   排版按正文规格做，别让它在老浏览器里显得像错误页。 */
+.seo-static{max-width:760px;margin:0 auto;padding:72px 24px 96px;color:var(--ink);
+  font:15px/1.85 -apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif}
+.seo-static h1{font-size:26px;line-height:1.45;margin:0 0 18px;letter-spacing:-.01em}
+.seo-static h2{font-size:15px;margin:34px 0 10px;letter-spacing:.02em;color:var(--accent)}
+.seo-static p{margin:0 0 12px;color:var(--muted)}
+.seo-static ul{margin:0 0 12px;padding-left:20px}
+.seo-static li{margin:6px 0;color:var(--muted)}
+@media print{.seo-static{display:block!important}}

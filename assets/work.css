@@ -1,0 +1,36 @@
+/* 案例独立页样式：与主站同一套深色基调，字号与留白按正文规格 */
+:root{--bg:#0b0b0c;--panel:#121214;--ink:#f3f1f2;--muted:#9a98a0;--accent:#e99abd;--line:rgba(243,241,242,.13)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.85 -apple-system,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(233,154,189,.5)}
+a:hover{color:var(--accent)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;padding:8px 12px;background:var(--panel);z-index:9}
+.topbar{padding:22px 24px;border-bottom:1px solid var(--line)}
+.topbar a{font-size:13px;color:var(--muted);border:0}
+main{max-width:860px;margin:0 auto;padding:48px 24px 40px}
+.kicker{font-size:11px;letter-spacing:.14em;color:var(--accent);margin:0 0 14px;text-transform:uppercase}
+h1{font-size:clamp(28px,4.6vw,44px);line-height:1.25;margin:0 0 16px;letter-spacing:-.02em}
+.headline{font-size:clamp(17px,2.2vw,21px);line-height:1.6;color:var(--ink);margin:0 0 28px}
+.meta{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 40px;padding:0}
+.meta li{border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12px;color:var(--muted)}
+.meta span{display:block;font-size:10px;letter-spacing:.1em;opacity:.6;margin-bottom:2px}
+section{margin:0 0 34px}
+h2{font-size:13px;letter-spacing:.1em;color:var(--accent);margin:0 0 12px;text-transform:uppercase}
+p{margin:0 0 12px;color:var(--muted)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;position:relative;padding:0 0 10px 30px;color:var(--muted)}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;color:var(--accent);font-size:11px;letter-spacing:.08em}
+.shots figure{margin:0 0 16px}
+.shots img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.others ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.others li{display:flex;justify-content:space-between;gap:12px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:13px}
+.others li span{color:var(--muted);font-size:11px}
+.cta{border:1px solid rgba(233,154,189,.28);border-radius:16px;padding:22px 24px;background:linear-gradient(160deg,rgba(233,154,189,.08),rgba(18,18,20,.6))}
+.cta h2{color:var(--ink);letter-spacing:0;text-transform:none;font-size:18px}
+.contact{font-size:13px;color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:26px 24px;text-align:center;color:var(--muted);font-size:12px}
+footer p{margin:0 0 6px}
+@media(max-width:640px){main{padding:32px 18px 28px}.topbar{padding:18px}}

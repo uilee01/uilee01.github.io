@@ -151,6 +151,41 @@
     }
   }
 
+  /* alt 控制在 125 字符内：太长反而影响可读性，部分引擎也会截断 */
+  function clip(s) {
+    s = String(s).replace(/\s+/g, ' ').trim();
+    return s.length > 120 ? s.slice(0, 117) + '…' : s;
+  }
+
+  /* alt 要写「这张图是什么」，不能写文件名或配置键名。
+     键名（project.LKSY）对搜索引擎等于没写 —— 图片搜索和无障碍都读不到信息。
+     这里按项目名 + 职责 + 标签拼一句描述。 */
+  function altFor(slot) {
+    var c = window.__COPY__ || {};
+    var lang = document.documentElement.lang === 'en' ? 'en' : 'cn';
+    if (slot === 'avatar') {
+      var n = (c.ui && c.ui[lang] && c.ui[lang].name) || '';
+      if (n) return lang === 'en' ? (n + ' — profile photo') : (n + ' 的个人照片');
+      return lang === 'en' ? 'Profile photo' : '个人照片';
+    }
+    if (slot.indexOf('project.') !== 0) return slot;
+    var id = slot.slice('project.'.length);
+    if (!id) return slot;
+    var ps = (c.projects || {})[lang] || [];
+    for (var i = 0; i < ps.length; i++) {
+      var p = ps[i];
+      if (!p || p.id !== id) continue;
+      var bits = [];
+      if (p.name) bits.push(p.name);
+      // role 字段有时是一整段散文，太长就不进 alt
+      if (p.role && p.role.length <= 30) bits.push(p.role);
+      if (p.tags && p.tags.length) bits.push(p.tags.slice(0, 5).join(' / '));
+      var tail = lang === 'en' ? ' — UI case' : ' — 项目界面';
+      return clip((bits.length ? bits.join(' · ') : id) + tail);
+    }
+    return id;
+  }
+
   function applyImages() {
     var imgs = getImages();
     var SLOTS = slots();
@@ -177,7 +212,7 @@
       var img = host.querySelector('img[data-injected]');
       if (!img) {
         img = document.createElement('img');
-        img.alt = slot;
+        img.alt = altFor(slot);
         img.setAttribute('data-injected', '1');
         img.style.cssText =
           'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;' +
